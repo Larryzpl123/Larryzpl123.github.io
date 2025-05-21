@@ -34,6 +34,10 @@
       text-decoration: none;
       color: #0366d6;
     }
+    .stats {
+      font-size: 0.85em;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -50,6 +54,14 @@
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const repos = await response.json();
+
+        // Sort repositories by the sum of stars and forks (descending order)
+        repos.sort((a, b) => {
+          const aScore = a.stargazers_count + a.forks_count;
+          const bScore = b.stargazers_count + b.forks_count;
+          return bScore - aScore;
+        });
+        
         repoContainer.innerHTML = '';
 
         // Loop through each repository and add it to the page.
@@ -73,7 +85,7 @@
             repoDiv.appendChild(repoDescription);
           }
 
-          // Repository details: language and update date
+          // Repository details: language, updated date, stars, and forks
           const repoDetails = document.createElement('p');
           let detailsText = "";
           if (repo.language) {
@@ -83,6 +95,12 @@
           detailsText += `Updated: ${updatedDate}`;
           repoDetails.textContent = detailsText;
           repoDiv.appendChild(repoDetails);
+
+          // Repository stats: stars and forks sum
+          const repoStats = document.createElement('p');
+          repoStats.className = 'stats';
+          repoStats.textContent = `⭐ Stars: ${repo.stargazers_count} • 🍴 Forks: ${repo.forks_count}`;
+          repoDiv.appendChild(repoStats);
 
           repoContainer.appendChild(repoDiv);
         });
