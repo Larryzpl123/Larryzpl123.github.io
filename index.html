@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My GitHub Repositories</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    .repo {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+    .repo h3 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+    .repo p {
+      margin: 5px 0;
+      font-size: 0.9em;
+      color: #333;
+    }
+    .repo a {
+      text-decoration: none;
+      color: #0366d6;
+    }
+  </style>
+</head>
+<body>
+  <h1>My GitHub Repositories</h1>
+  <div id="repo-container">Loading repositories...</div>
+
+  <script>
+    async function fetchRepositories() {
+      const repoContainer = document.getElementById('repo-container');
+      try {
+        // Call GitHub API for repositories of user Larryzpl123
+        const response = await fetch('https://api.github.com/users/Larryzpl123/repos');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const repos = await response.json();
+        repoContainer.innerHTML = '';
+
+        // Loop through each repository and add it to the page.
+        repos.forEach(repo => {
+          const repoDiv = document.createElement('div');
+          repoDiv.className = 'repo';
+
+          // Repository title with a link
+          const repoTitle = document.createElement('h3');
+          const repoLink = document.createElement('a');
+          repoLink.href = repo.html_url;
+          repoLink.target = '_blank';
+          repoLink.textContent = repo.name;
+          repoTitle.appendChild(repoLink);
+          repoDiv.appendChild(repoTitle);
+
+          // Repository description (if available)
+          if (repo.description) {
+            const repoDescription = document.createElement('p');
+            repoDescription.textContent = repo.description;
+            repoDiv.appendChild(repoDescription);
+          }
+
+          // Repository details: language and update date
+          const repoDetails = document.createElement('p');
+          let detailsText = "";
+          if (repo.language) {
+            detailsText += `Language: ${repo.language} • `;
+          }
+          const updatedDate = new Date(repo.updated_at).toLocaleDateString();
+          detailsText += `Updated: ${updatedDate}`;
+          repoDetails.textContent = detailsText;
+          repoDiv.appendChild(repoDetails);
+
+          repoContainer.appendChild(repoDiv);
+        });
+      } catch (error) {
+        repoContainer.innerHTML = `<p>Error loading repositories: ${error.message}</p>`;
+      }
+    }
+
+    // Fetch repositories on page load.
+    fetchRepositories();
+  </script>
+</body>
+</html>
