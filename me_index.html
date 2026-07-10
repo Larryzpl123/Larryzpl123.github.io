@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Larry Zhong — Computational Neuroscience</title>
+  <meta name="description" content="Larry Zhong — computational neuroscience and brain-computer interfaces." />
+  <script>
+    (function () {
+      try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300..700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#050810;--bg-elev:#0B1426;--bg-soft:#0F1A30;--ink:#E0E7F4;--ink-soft:#95A4BD;--muted:#4D5A75;
+      --accent:#00B0FF;--accent-bright:#4DC4FF;--accent-deep:#0277BD;--accent-glow:rgba(0,176,255,.4);--line:#1A2542;--line-soft:#111A2E;
+      --font-display:'IBM Plex Mono',ui-monospace,monospace;--font-body:'IBM Plex Sans',system-ui,sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,monospace;
+      --bg-glow:radial-gradient(ellipse 80% 50% at 15% 0%,rgba(0,176,255,.08),transparent 60%),radial-gradient(ellipse 70% 50% at 85% 100%,rgba(2,119,189,.07),transparent 60%);
+      --bg-overlay:radial-gradient(circle,rgba(79,134,195,.09) 1px,transparent 1px);--bg-overlay-size:32px 32px;--bg-overlay-opacity:.5;
+      --accent-shadow:0 0 28px rgba(0,176,255,.35);--accent-text-glow:0 0 16px rgba(0,176,255,.2);--waveform-glow:drop-shadow(0 0 6px var(--accent-glow));
+      --row-hover-bg:linear-gradient(90deg,rgba(0,176,255,.05),transparent);--toggle-hover-bg:rgba(0,176,255,.08);
+    }
+    :root[data-theme="light"]{
+      --bg:#F4EFE5;--bg-elev:#ECE4D2;--bg-soft:#ECE4D2;--ink:#1A1815;--ink-soft:#3D3A35;--muted:#8A8275;
+      --accent:#6B2828;--accent-bright:#8A3434;--accent-deep:#4F1F1F;--accent-glow:rgba(107,40,40,.25);--line:#C9BFA8;--line-soft:#DDD3BD;
+      --font-display:'Fraunces',Georgia,serif;--font-body:'Source Serif 4',Georgia,serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;
+      --bg-glow:radial-gradient(circle at 15% 0%,rgba(107,40,40,.04),transparent 45%),radial-gradient(circle at 85% 100%,rgba(107,40,40,.03),transparent 50%);
+      --bg-overlay:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");--bg-overlay-size:auto;--bg-overlay-opacity:.35;
+      --accent-shadow:none;--accent-text-glow:none;--waveform-glow:none;--row-hover-bg:linear-gradient(90deg,rgba(107,40,40,.04),transparent);--toggle-hover-bg:rgba(107,40,40,.05);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:var(--bg-glow);min-height:100vh;transition:background-color .35s,color .35s}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:var(--bg-overlay-opacity);z-index:1;background-image:var(--bg-overlay);background-size:var(--bg-overlay-size)}
+    .container{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+    nav{padding:28px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);transition:border-color .35s}
+    .brand{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center}
+    :root[data-theme="light"] .brand{color:var(--ink)}
+    .brand::before{content:'';display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:10px;box-shadow:0 0 10px var(--accent),0 0 4px var(--accent);animation:pulse 2.4s ease-in-out infinite}
+    :root[data-theme="light"] .brand::before{display:none}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+    .nav-right{display:flex;align-items:center;gap:20px}
+    .nav-links{display:flex;gap:28px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+    :root[data-theme="light"] .nav-links{text-transform:none;letter-spacing:.04em}
+    .nav-links a{color:var(--ink-soft);text-decoration:none;transition:color .2s,text-shadow .2s;position:relative}
+    .nav-links a:hover{color:var(--accent);text-shadow:var(--accent-text-glow)}
+    .nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--accent);transition:width .25s}
+    :root:not([data-theme="light"]) .nav-links a::after{box-shadow:0 0 6px var(--accent)}
+    .nav-links a:hover::after{width:100%}
+    .theme-toggle{width:36px;height:36px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s,background .2s,transform .2s;padding:0}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--toggle-hover-bg)}
+    .theme-toggle:active{transform:scale(.94)}
+    .theme-toggle svg{width:16px;height:16px;display:block}
+    .icon-sun{display:block}.icon-moon{display:none}
+    [data-theme="light"] .icon-sun{display:none}[data-theme="light"] .icon-moon{display:block}
+    .hero{padding:90px 0 72px;display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:start}
+    .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;display:inline-flex;align-items:center;gap:10px}
+    .eyebrow::before{content:'//';color:var(--muted);font-weight:500}
+    :root[data-theme="light"] .eyebrow::before{display:none}
+    .hero h1{font-family:var(--font-display);font-size:clamp(56px,8.5vw,112px);line-height:.95;font-weight:600;letter-spacing:-.04em;margin-bottom:32px;color:var(--ink)}
+    :root[data-theme="light"] .hero h1{font-weight:400;line-height:.92;letter-spacing:-.035em;font-size:clamp(60px,9vw,124px);font-variation-settings:"opsz" 144}
+    .hero h1 em{font-style:italic;font-weight:500;color:var(--accent);text-shadow:var(--accent-shadow)}
+    :root[data-theme="light"] .hero h1 em{font-weight:350;color:var(--ink)}
+    .tagline{font-size:18px;max-width:540px;color:var(--ink-soft);line-height:1.55}
+    :root[data-theme="light"] .tagline{font-size:19px}
+    .tagline strong{color:var(--ink);font-weight:600}
+    .tagline em{color:var(--accent);font-style:italic}
+    .photo-frame{width:280px;aspect-ratio:1/1;background:var(--bg-elev);border:1px solid var(--line);position:relative;overflow:hidden;box-shadow:0 0 40px rgba(0,176,255,.06);transition:box-shadow .4s,border-color .4s,background-color .35s}
+    :root[data-theme="light"] .photo-frame{box-shadow:none}
+    .photo-frame:hover{border-color:var(--accent-deep);box-shadow:0 0 60px rgba(0,176,255,.18)}
+    :root[data-theme="light"] .photo-frame:hover{box-shadow:none;border-color:var(--accent)}
+    .photo-frame::before{content:'';position:absolute;inset:10px;border:1px dashed var(--muted);pointer-events:none;z-index:2;display:none}
+    :root[data-theme="light"] .photo-frame::before{display:block}
+    .photo-frame::after{content:'';position:absolute;inset:6px;pointer-events:none;z-index:2;background:linear-gradient(to right,var(--accent) 14px,transparent 14px) top left/14px 1px no-repeat,linear-gradient(to bottom,var(--accent) 14px,transparent 14px) top left/1px 14px no-repeat,linear-gradient(to left,var(--accent) 14px,transparent 14px) top right/14px 1px no-repeat,linear-gradient(to bottom,var(--accent) 14px,transparent 14px) top right/1px 14px no-repeat,linear-gradient(to right,var(--accent) 14px,transparent 14px) bottom left/14px 1px no-repeat,linear-gradient(to top,var(--accent) 14px,transparent 14px) bottom left/1px 14px no-repeat,linear-gradient(to left,var(--accent) 14px,transparent 14px) bottom right/14px 1px no-repeat,linear-gradient(to top,var(--accent) 14px,transparent 14px) bottom right/1px 14px no-repeat;opacity:.7}
+    :root[data-theme="light"] .photo-frame::after{display:none}
+    .photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:3}
+    .photo-frame img[src=""],.photo-frame img:not([src]){display:none}
+    .photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-mono);color:var(--muted);letter-spacing:.08em;text-align:center;padding:24px;z-index:1}
+    .photo-placeholder .label{font-size:11px;text-transform:uppercase;margin-bottom:8px;color:var(--ink-soft)}
+    .photo-placeholder .dim{font-size:10px;opacity:.7;color:var(--accent)}
+    :root[data-theme="light"] .photo-placeholder .dim{color:var(--muted)}
+    .photo-placeholder .hint{margin-top:18px;font-size:9px;opacity:.55;letter-spacing:.12em}
+    section{padding:80px 0;border-top:1px solid var(--line);transition:border-color .35s}
+    .section-header{display:grid;grid-template-columns:80px 1fr;gap:32px;margin-bottom:52px;align-items:baseline}
+    .section-num{font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:.16em;padding-top:10px;text-transform:uppercase}
+    :root[data-theme="light"] .section-num{font-size:12px;letter-spacing:.12em;padding-top:6px}
+    .section-title{font-family:var(--font-display);font-size:clamp(28px,3.5vw,38px);font-weight:500;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+    :root[data-theme="light"] .section-title{font-weight:400;font-variation-settings:"opsz" 60}
+    .content{display:grid;grid-template-columns:80px 1fr;gap:32px}
+    .content-body{grid-column:2;max-width:720px}
+    .content-body p{margin-bottom:18px;font-size:16.5px;color:var(--ink-soft)}
+    :root[data-theme="light"] .content-body p{font-size:17.5px}
+    .content-body p:last-child{margin-bottom:0}
+    .content-body strong{color:var(--ink);font-weight:600}
+    .content-body em{color:var(--accent);font-style:italic;text-shadow:var(--accent-text-glow)}
+    .content-body a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(0,176,255,.3);transition:border-color .2s,text-shadow .2s}
+    :root[data-theme="light"] .content-body a{border-bottom-color:var(--line)}
+    .content-body a:hover{border-bottom-color:var(--accent);text-shadow:var(--accent-text-glow)}
+    .projects{grid-column:2;display:grid;grid-template-columns:repeat(2,1fr)}
+    .project{padding:28px 0;border-top:1px solid var(--line);position:relative}
+    .project:nth-child(odd){padding-right:32px;border-right:1px solid var(--line)}
+    .project:nth-child(even){padding-left:32px}
+    .project-tag{font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+    .project h3{font-family:var(--font-display);font-size:20px;font-weight:500;margin-bottom:10px;letter-spacing:-.01em;line-height:1.3;color:var(--ink)}
+    :root[data-theme="light"] .project h3{font-size:22px;line-height:1.2;font-variation-settings:"opsz" 60}
+    .project h3 a{color:var(--ink);text-decoration:none;transition:color .2s,text-shadow .2s}
+    .project h3 a:hover{color:var(--accent);text-shadow:var(--accent-text-glow)}
+    .project p{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+    :root[data-theme="light"] .project p{font-size:15px}
+    .awards{list-style:none;grid-column:2}
+    .awards li{display:grid;grid-template-columns:100px 1fr auto;gap:24px;padding:16px 0;border-bottom:1px solid var(--line-soft);align-items:baseline;transition:background .25s,padding .25s}
+    .awards li:first-child{border-top:1px solid var(--line-soft)}
+    .awards li:hover{background:var(--row-hover-bg);padding-left:12px}
+    .award-year{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+    .award-name{font-size:16px;color:var(--ink);font-weight:500}
+    :root[data-theme="light"] .award-name{font-weight:400}
+    .award-name a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}
+    .award-name a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+    .award-detail{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-align:right;letter-spacing:.04em}
+    .waveform-wrap{grid-column:2;margin-top:56px;padding-top:28px;border-top:1px solid var(--line-soft)}
+    .waveform-label{font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+    :root[data-theme="light"] .waveform-label{color:var(--muted)}
+    .waveform-label::before{content:'◉ ';color:var(--accent);animation:pulse 2.4s ease-in-out infinite}
+    :root[data-theme="light"] .waveform-label::before{display:none}
+    .waveform{width:100%;height:60px;display:block;color:var(--accent)}
+    .waveform path{stroke:currentColor;filter:var(--waveform-glow)}
+    :root[data-theme="light"] .waveform path{opacity:.7}
+    .contact-grid{grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .contact-item{padding:24px;background:var(--bg-elev);border:1px solid var(--line);transition:transform .25s,border-color .25s,box-shadow .25s,background-color .35s}
+    .contact-item:hover{border-color:var(--accent-deep);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,176,255,.12),0 0 0 1px var(--accent-deep)}
+    :root[data-theme="light"] .contact-item:hover{border-color:var(--accent);box-shadow:none}
+    .contact-label{font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+    :root[data-theme="light"] .contact-label{color:var(--muted)}
+    .contact-value{font-family:var(--font-mono);font-size:14px;color:var(--ink);word-break:break-word;line-height:1.4}
+    :root[data-theme="light"] .contact-value{font-family:var(--font-body);font-size:15px}
+    .contact-value a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+    .contact-value a:hover{border-color:var(--accent);color:var(--accent)}
+    footer{padding:40px 0 56px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+    :root[data-theme="light"] footer{text-transform:none}
+    .fade-in{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    ::selection{background:var(--accent);color:var(--bg)}
+    @media(max-width:768px){
+      .container{padding:0 24px}nav{padding:22px 0}.nav-links{gap:18px;font-size:11px}.nav-right{gap:14px}
+      .hero{grid-template-columns:1fr;gap:40px;padding:56px 0 48px}.hero h1{font-size:clamp(54px,13vw,84px)}.tagline{font-size:16px}
+      .photo-frame{width:100%;max-width:320px}
+      section{padding:56px 0}.section-header,.content{grid-template-columns:1fr;gap:14px}.section-num{padding-top:0}.section-title{font-size:28px}
+      .content-body,.projects,.awards,.contact-grid,.waveform-wrap{grid-column:1}
+      .projects{grid-template-columns:1fr}.project:nth-child(odd){padding-right:0;border-right:none}.project:nth-child(even){padding-left:0}
+      .contact-grid{grid-template-columns:1fr}
+      .awards li{grid-template-columns:80px 1fr;gap:12px}.award-detail{grid-column:2;text-align:left;margin-top:2px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">L.Z. — '27</div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#currently">Now</a>
+          <a href="#projects">Work</a>
+          <a href="works/">Writing</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Pittsburgh, PA · Class of 2027</div>
+        <h1>Larry <em>Zhong</em></h1>
+        <p class="tagline" data-content="intro"></p>
+      </div>
+      <div class="photo-frame" aria-label="Portrait">
+        <img src="portrait.jpg" alt="Larry Zhong" />
+        <div class="photo-placeholder" aria-hidden="true">
+          <div class="label">Portrait</div><div class="dim">1080 × 1080</div><div class="hint">SAVE AS portrait.jpg</div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about"><div class="section-header"><div class="section-num">I.</div><h2 class="section-title">About</h2></div>
+      <div class="content"><div></div><div class="content-body" data-content="about"></div></div></section>
+
+    <section id="currently"><div class="section-header"><div class="section-num">II.</div><h2 class="section-title">Currently</h2></div>
+      <div class="content"><div></div><div class="content-body" data-content="currently"></div></div></section>
+
+    <section id="research"><div class="section-header"><div class="section-num">III.</div><h2 class="section-title">Research<br />Interests</h2></div>
+      <div class="content"><div></div><div class="content-body" data-content="research-interests"></div></div></section>
+
+    <section id="projects"><div class="section-header"><div class="section-num">IV.</div><h2 class="section-title">Selected Work</h2></div>
+      <div class="content"><div></div><div class="projects" data-content="selected-work"></div>
+        <div class="waveform-wrap"><div class="waveform-label">EEG · Cz channel · ~10 Hz</div>
+          <svg class="waveform" viewBox="0 0 800 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0,30 Q15,12 30,30 T60,30 Q75,46 90,30 T120,30 Q135,8 150,30 T180,30 Q195,42 210,30 T240,30 Q255,18 270,30 T300,30 Q315,4 330,30 Q345,52 360,30 T390,30 Q405,20 420,30 T450,30 Q465,46 480,30 T510,30 Q525,14 540,30 T570,30 Q585,40 600,30 T630,30 Q645,12 660,30 T690,30 Q705,48 720,30 T750,30 Q765,18 780,30 T800,30" stroke="currentColor" stroke-width="1.2" fill="none" />
+          </svg>
+        </div>
+      </div></section>
+
+    <section id="awards"><div class="section-header"><div class="section-num">V.</div><h2 class="section-title">Awards &amp; Activities</h2></div>
+      <div class="content"><div></div><ul class="awards" data-content="awards"></ul></div></section>
+
+    <section id="contact"><div class="section-header"><div class="section-num">VI.</div><h2 class="section-title">Contact</h2></div>
+      <div class="content"><div></div><div class="contact-grid" data-content="contacts"></div></div></section>
+
+    <footer><div>© 2026 Larry Zhong</div><div>Pittsburgh</div></footer>
+  </div>
+
+  <script>
+    // THEME TOGGLE
+    (function () {
+      const root = document.documentElement, btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        const isLight = root.getAttribute('data-theme') === 'light';
+        if (isLight) root.removeAttribute('data-theme'); else root.setAttribute('data-theme', 'light');
+        try { localStorage.setItem('theme', isLight ? 'dark' : 'light'); } catch (e) {}
+      });
+    })();
+
+    // ===== SINGLE-FILE CONTENT LOADER — everything comes from content.txt =====
+    const escapeHtml = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const renderInline = (t) => { let h = escapeHtml(t);
+      h = h.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+      h = h.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+      h = h.replace(/\*([^*\n]+)\*/g,'<em>$1</em>'); return h; };
+    const renderProse = (t) => t.split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${renderInline(p)}</p>`).join('');
+    const parseEntries = (t) => t.split(/\n\s*\n/).map(b=>b.trim()).filter(Boolean).map(block=>{
+      const o={}; let k=null;
+      for (const line of block.split('\n')) { const m=line.match(/^([A-Z][A-Z_]*):\s*(.*)$/);
+        if (m){k=m[1];o[k]=m[2].trim();} else if (k) o[k]+=' '+line.trim(); } return o; });
+    const splitSections = (text) => { const map={}; let cur=null, buf=[];
+      const flush=()=>{ if(cur) map[cur]=buf.join('\n').trim(); buf=[]; };
+      for (const line of text.split('\n')) { const m=line.match(/^===\s*(.+?)\s*===\s*$/);
+        if (m){ flush(); cur=m[1].trim().toLowerCase(); } else if (cur!==null) buf.push(line); }
+      flush(); return map; };
+
+    const sectionParents = { 'about':'about','currently':'currently','research-interests':'research','selected-work':'projects','awards':'awards','contacts':'contact' };
+
+    (async () => {
+      let S = {};
+      try { const res = await fetch('content.txt'); if (res.ok) S = splitSections(await res.text()); } catch (e) {}
+      const has = (k) => S[k] && S[k].trim().length;
+      const hideParent = (dc) => { const id=sectionParents[dc]; const sec=id&&document.getElementById(id); if(sec) sec.style.display='none'; };
+
+      // intro
+      const introEl = document.querySelector('[data-content="intro"]');
+      if (has('intro')) introEl.innerHTML = renderInline(S['intro'].trim()); else if (introEl) introEl.style.display='none';
+
+      // prose sections
+      ['about','currently','research-interests'].forEach(k => {
+        if (has(k)) document.querySelector(`[data-content="${k}"]`).innerHTML = renderProse(S[k]);
+        else hideParent(k);
+      });
+
+      // selected work
+      if (has('selected-work')) {
+        document.querySelector('[data-content="selected-work"]').innerHTML = parseEntries(S['selected-work']).map(e => {
+          const title = e.LINK ? `<h3><a href="${escapeHtml(e.LINK)}" target="_blank" rel="noopener">${escapeHtml(e.TITLE||'')}</a></h3>` : `<h3>${escapeHtml(e.TITLE||'')}</h3>`;
+          return `<div class="project"><div class="project-tag">${escapeHtml(e.TAG||'')}</div>${title}<p>${renderInline(e.DESCRIPTION||'')}</p></div>`;
+        }).join('');
+      } else hideParent('selected-work');
+
+      // awards
+      if (has('awards')) {
+        document.querySelector('[data-content="awards"]').innerHTML = parseEntries(S['awards']).map(e => {
+          const name = e.LINK ? `<a href="${escapeHtml(e.LINK)}" target="_blank" rel="noopener">${escapeHtml(e.NAME||'')}</a>` : escapeHtml(e.NAME||'');
+          return `<li><span class="award-year">${escapeHtml(e.YEAR||'')}</span><span class="award-name">${name}</span><span class="award-detail">${escapeHtml(e.DETAIL||'')}</span></li>`;
+        }).join('');
+      } else hideParent('awards');
+
+      // contacts
+      if (has('contacts')) {
+        document.querySelector('[data-content="contacts"]').innerHTML = parseEntries(S['contacts']).map(e => {
+          const value = e.LINK ? `<a href="${escapeHtml(e.LINK)}">${renderInline(e.VALUE||'')}</a>` : renderInline(e.VALUE||'');
+          return `<div class="contact-item"><div class="contact-label">${escapeHtml(e.LABEL||'')}</div><div class="contact-value">${value}</div></div>`;
+        }).join('');
+      } else hideParent('contacts');
+
+      // renumber visible sections
+      const romans = ['I.','II.','III.','IV.','V.','VI.','VII.','VIII.'];
+      const visible = [...document.querySelectorAll('section')].filter(s => s.style.display !== 'none');
+      visible.forEach((sec,i) => { const n=sec.querySelector('.section-num'); if(n) n.textContent = romans[i]||''; });
+
+      const io = new IntersectionObserver((es) => es.forEach(x => { if (x.isIntersecting){ x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold:.08, rootMargin:'0px 0px -40px 0px' });
+      visible.forEach(el => { el.classList.add('fade-in'); io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
