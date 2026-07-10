@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Larry Zhong — Writing & Research</title>
+  <meta name="description" content="Larry Zhong — research papers and writing." />
+  <script>
+    (function () {
+      try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme','light'); } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300..700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#050810;--bg-elev:#0B1426;--ink:#E0E7F4;--ink-soft:#95A4BD;--muted:#4D5A75;
+      --accent:#00B0FF;--accent-deep:#0277BD;--line:#1A2542;--line-soft:#111A2E;
+      --font-display:'IBM Plex Mono',ui-monospace,monospace;--font-body:'IBM Plex Sans',system-ui,sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,monospace;
+      --bg-glow:radial-gradient(ellipse 80% 50% at 15% 0%,rgba(0,176,255,.08),transparent 60%),radial-gradient(ellipse 70% 50% at 85% 100%,rgba(2,119,189,.07),transparent 60%);
+      --overlay:radial-gradient(circle,rgba(79,134,195,.09) 1px,transparent 1px);--overlay-size:32px 32px;--overlay-op:.5;
+      --text-glow:0 0 16px rgba(0,176,255,.2);--toggle-hover:rgba(0,176,255,.08);--row-hover:linear-gradient(90deg,rgba(0,176,255,.05),transparent);
+    }
+    :root[data-theme="light"]{
+      --bg:#F4EFE5;--bg-elev:#ECE4D2;--ink:#1A1815;--ink-soft:#3D3A35;--muted:#8A8275;
+      --accent:#6B2828;--accent-deep:#4F1F1F;--line:#C9BFA8;--line-soft:#DDD3BD;
+      --font-display:'Fraunces',Georgia,serif;--font-body:'Source Serif 4',Georgia,serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;
+      --bg-glow:radial-gradient(circle at 15% 0%,rgba(107,40,40,.04),transparent 45%),radial-gradient(circle at 85% 100%,rgba(107,40,40,.03),transparent 50%);
+      --overlay:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");--overlay-size:auto;--overlay-op:.35;
+      --text-glow:none;--toggle-hover:rgba(107,40,40,.05);--row-hover:linear-gradient(90deg,rgba(107,40,40,.04),transparent);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:var(--bg-glow);min-height:100vh;transition:background-color .35s,color .35s}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:var(--overlay-op);z-index:1;background-image:var(--overlay);background-size:var(--overlay-size)}
+    .container{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+    a{color:inherit}
+    nav{padding:28px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+    .brand{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center}
+    :root[data-theme="light"] .brand{color:var(--ink)}
+    .brand::before{content:'';display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:10px;box-shadow:0 0 10px var(--accent);animation:pulse 2.4s ease-in-out infinite}
+    :root[data-theme="light"] .brand::before{display:none}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+    .nav-right{display:flex;align-items:center;gap:20px}
+    .nav-links{display:flex;gap:28px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+    :root[data-theme="light"] .nav-links{text-transform:none;letter-spacing:.04em}
+    .nav-links a{color:var(--ink-soft);text-decoration:none;transition:color .2s;position:relative}
+    .nav-links a:hover{color:var(--accent);text-shadow:var(--text-glow)}
+    .nav-links a.active{color:var(--accent)}
+    .nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--accent);transition:width .25s}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .theme-toggle{width:36px;height:36px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:.2s}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--toggle-hover)}
+    .theme-toggle svg{width:16px;height:16px}
+    .icon-sun{display:block}.icon-moon{display:none}
+    [data-theme="light"] .icon-sun{display:none}[data-theme="light"] .icon-moon{display:block}
+    .hero{padding:90px 0 56px}
+    .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:26px;display:inline-flex;gap:10px}
+    .eyebrow::before{content:'//';color:var(--muted)}
+    :root[data-theme="light"] .eyebrow::before{display:none}
+    .hero h1{font-family:var(--font-display);font-size:clamp(48px,7vw,88px);line-height:.95;font-weight:600;letter-spacing:-.04em;margin-bottom:24px}
+    :root[data-theme="light"] .hero h1{font-weight:400;font-variation-settings:"opsz" 144}
+    .hero h1 em{font-style:italic;color:var(--accent)}
+    :root[data-theme="light"] .hero h1 em{color:var(--ink)}
+    .lede{font-size:18px;max-width:560px;color:var(--ink-soft)}
+    section{padding:20px 0 80px}
+    .list{border-top:1px solid var(--line)}
+    .item{padding:26px 0;border-bottom:1px solid var(--line-soft);transition:background .25s,padding .25s}
+    .item:hover{background:var(--row-hover);padding-left:14px}
+    .item .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+    :root[data-theme="light"] .item .tag{color:var(--muted)}
+    .item h3{font-family:var(--font-display);font-size:21px;font-weight:500;letter-spacing:-.01em;line-height:1.3;margin-bottom:8px}
+    :root[data-theme="light"] .item h3{font-weight:400;font-variation-settings:"opsz" 60}
+    .item h3 a{text-decoration:none;transition:color .2s,text-shadow .2s}
+    .item h3 a:hover{color:var(--accent);text-shadow:var(--text-glow)}
+    .item p{font-size:15px;color:var(--ink-soft);max-width:760px}
+    footer{padding:40px 0 56px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between}
+    :root[data-theme="light"] footer{text-transform:none}
+    .fade-in{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+    .fade-in.visible{opacity:1;transform:none}
+    ::selection{background:var(--accent);color:var(--bg)}
+    @media(max-width:768px){.container{padding:0 24px}.hero{padding:56px 0 40px}.hero h1{font-size:clamp(40px,11vw,64px)}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">L.Z. — '27</div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="../">About</a>
+          <a href="../#projects">Work</a>
+          <a class="active" href="./">Writing</a>
+          <a href="../#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">Papers · Essays · Preprints</div>
+      <h1>Writing &amp; <em>Research</em></h1>
+      <p class="lede">Research papers, essays, and preprints — from computational neuroscience to history. Full texts below.</p>
+    </header>
+
+    <section>
+      <div class="list" data-content="works"></div>
+    </section>
+
+    <footer>
+      <div>© 2026 Larry Zhong</div>
+      <div><a href="../" style="text-decoration:none">← Home</a></div>
+    </footer>
+  </div>
+
+  <script>
+    (function(){var r=document.documentElement,b=document.querySelector('.theme-toggle');if(!b)return;
+      b.addEventListener('click',function(){var l=r.getAttribute('data-theme')==='light';if(l)r.removeAttribute('data-theme');else r.setAttribute('data-theme','light');try{localStorage.setItem('theme',l?'dark':'light')}catch(e){}});})();
+
+    const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const inl=t=>{let h=esc(t);h=h.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');h=h.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');h=h.replace(/\*([^*\n]+)\*/g,'<em>$1</em>');return h;};
+    const parseEntries=t=>t.split(/\n\s*\n/).map(b=>b.trim()).filter(Boolean).map(block=>{const o={};let k=null;for(const line of block.split('\n')){const m=line.match(/^([A-Z][A-Z_]*):\s*(.*)$/);if(m){k=m[1];o[k]=m[2].trim();}else if(k)o[k]+=' '+line.trim();}return o;});
+    const splitSections=text=>{const map={};let cur=null,buf=[];const flush=()=>{if(cur)map[cur]=buf.join('\n').trim();buf=[];};for(const line of text.split('\n')){const m=line.match(/^===\s*(.+?)\s*===\s*$/);if(m){flush();cur=m[1].trim().toLowerCase();}else if(cur!==null)buf.push(line);}flush();return map;};
+
+    (async()=>{
+      const el=document.querySelector('[data-content="works"]');
+      try{
+        const res=await fetch('../content.txt');if(!res.ok)throw 0;
+        const entries=parseEntries((splitSections(await res.text()))['works']||'');
+        el.innerHTML=entries.map(e=>{
+          const title=e.LINK?`<h3><a href="${esc(e.LINK)}" target="_blank" rel="noopener">${esc(e.TITLE||'')}</a></h3>`:`<h3>${esc(e.TITLE||'')}</h3>`;
+          return `<div class="item fade-in"><div class="tag">${esc(e.TAG||'')}</div>${title}<p>${inl(e.DESCRIPTION||'')}</p></div>`;
+        }).join('');
+      }catch(err){el.innerHTML='<p style="color:var(--muted)">works.txt not found.</p>';}
+      const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:.08});
+      document.querySelectorAll('.fade-in').forEach(x=>io.observe(x));
+    })();
+  </script>
+</body>
+</html>
