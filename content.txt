@@ -140,11 +140,6 @@ TITLE: Simplification Strategies for Biologically Constrained Hippocampal CA1 Mi
 LINK:
 DESCRIPTION: Independent study modeling how far a CA1 hippocampal microcircuit can be simplified (Hodgkin–Huxley → LIF; dense → sparse networks) before firing-rate and theta/gamma dynamics degrade. Python, with full code. *DOI coming (Zenodo).*
 
-TAG: Brain–Computer Interfaces · preprint
-TITLE: Diagnosing Motor-Imagery BCI Failure: A Classifier-Free Riemannian Separability Approach on Dataset 2a
-LINK:
-DESCRIPTION: A classifier-free, Riemannian-geometry analysis of *why* motor-imagery brain–computer interfaces fail to decode EEG (BCI Competition IV, Dataset 2a).
-
 TAG: U.S. History · research paper
 TITLE: McCarthyism's Effects on Academic Freedom and Higher Education
 LINK:us-history-research-paper.pdf
