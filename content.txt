@@ -137,8 +137,8 @@ LINK: https://www.shadysideacademy.org/
 === WORKS ===
 TAG: Computational Neuroscience · preprint
 TITLE: Simplification Strategies for Biologically Constrained Hippocampal CA1 Microcircuit Models
-LINK:
-DESCRIPTION: Independent study modeling how far a CA1 hippocampal microcircuit can be simplified (Hodgkin–Huxley → LIF; dense → sparse networks) before firing-rate and theta/gamma dynamics degrade. Python, with full code. *DOI coming (Zenodo).*
+LINK: https://doi.org/10.5281/zenodo.21272959
+DESCRIPTION: Independent study modeling how far a CA1 hippocampal microcircuit can be simplified (Hodgkin–Huxley → LIF; dense → sparse networks) before firing-rate and theta/gamma dynamics degrade. Python, with full code. *Zenodo preprint.*
 
 TAG: U.S. History · research paper
 TITLE: McCarthyism's Effects on Academic Freedom and Higher Education
