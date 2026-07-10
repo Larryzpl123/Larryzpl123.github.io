@@ -162,8 +162,8 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#currently">Now</a>
+          <a href="#writing">Writing</a>
           <a href="#projects">Work</a>
-          <a href="works/">Writing</a>
           <a href="#contact">Contact</a>
         </div>
         <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
@@ -195,6 +195,9 @@
 
     <section id="research"><div class="section-header"><div class="section-num">III.</div><h2 class="section-title">Research<br />Interests</h2></div>
       <div class="content"><div></div><div class="content-body" data-content="research-interests"></div></div></section>
+
+    <section id="writing"><div class="section-header"><div class="section-num">IV.</div><h2 class="section-title">Writing &amp; Research</h2></div>
+      <div class="content"><div></div><div class="projects" data-content="works"></div></div></section>
 
     <section id="projects"><div class="section-header"><div class="section-num">IV.</div><h2 class="section-title">Selected Work</h2></div>
       <div class="content"><div></div><div class="projects" data-content="selected-work"></div>
@@ -243,7 +246,7 @@
         if (m){ flush(); cur=m[1].trim().toLowerCase(); } else if (cur!==null) buf.push(line); }
       flush(); return map; };
 
-    const sectionParents = { 'about':'about','currently':'currently','research-interests':'research','selected-work':'projects','awards':'awards','contacts':'contact' };
+    const sectionParents = { 'about':'about','currently':'currently','research-interests':'research','works':'writing','selected-work':'projects','awards':'awards','contacts':'contact' };
 
     (async () => {
       let S = {};
@@ -260,6 +263,14 @@
         if (has(k)) document.querySelector(`[data-content="${k}"]`).innerHTML = renderProse(S[k]);
         else hideParent(k);
       });
+
+      // writing & research
+      if (has('works')) {
+        document.querySelector('[data-content="works"]').innerHTML = parseEntries(S['works']).map(e => {
+          const title = e.LINK ? `<h3><a href="${escapeHtml(e.LINK)}" target="_blank" rel="noopener">${escapeHtml(e.TITLE||'')}</a></h3>` : `<h3>${escapeHtml(e.TITLE||'')}</h3>`;
+          return `<div class="project"><div class="project-tag">${escapeHtml(e.TAG||'')}</div>${title}<p>${renderInline(e.DESCRIPTION||'')}</p></div>`;
+        }).join('');
+      } else hideParent('works');
 
       // selected work
       if (has('selected-work')) {

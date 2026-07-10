@@ -142,25 +142,25 @@ DESCRIPTION: Independent study modeling how far a CA1 hippocampal microcircuit c
 
 TAG: U.S. History · research paper
 TITLE: McCarthyism's Effects on Academic Freedom and Higher Education
-LINK:us-history-research-paper.pdf
+LINK: /works/us-history-research-paper.pdf
 DESCRIPTION: A year-long research paper on how the Second Red Scare (1947–1957) reshaped the American university — loyalty oaths, HUAC investigations, and administrative capitulation.
 
 TAG: History · Semester I final
 TITLE: Fear Itself — The Election of 1940
-LINK:jmk.pdf
+LINK: /works/jmk.pdf
 DESCRIPTION: Open letters written in the voice of John Maynard Keynes, debating the New Deal and the 1940 election.
 
 TAG: History · John Locke 2025 (Shortlisted)
 TITLE: Beyond Shame and Pride: A Balanced Approach to National History
-LINK:history-2025.pdf
+LINK: /works/history-2025.pdf
 DESCRIPTION: How nations should reckon with their past beyond guilt or pride. Shortlisted, John Locke Global Essay Competition.
 
 TAG: History · John Locke 2026
 TITLE: The Most Famous Stranger in the World: Does Che Deserve His Iconic T-Shirt?
-LINK:history-2026.pdf
+LINK: /works/history-2026.pdf
 DESCRIPTION: On the Che Guevara photograph and what an icon really reflects back at us.
 
 TAG: Psychology · John Locke 2026
 TITLE: The Thermometer That Changes the Weather: Is Mental Illness Over-Diagnosed or Better Recognized?
-LINK:psych-2026.pdf
+LINK: /works/psych-2026.pdf
 DESCRIPTION: On whether a diagnosis describes a person or acts on them — over-diagnosis versus better recognition.
