@@ -1,0 +1,171 @@
+=== INTRO ===
+Class of 2027 at Shady Side Academy, boarding from Beijing. I build things at the intersection of **computational neuroscience**, **brain–computer interfaces**, and **history** — and I can't leave something *broken or missing* without building a fix.
+
+=== ABOUT ===
+I work at the intersection of **neuroscience, computing, and history**. I don't just learn things — I build them: a hippocampal CA1 microcircuit model, an EEG-controlled robotic hand, and a rating engine that turned my dorm's foosball table into a social hub.
+
+What drives me is curiosity about the brain — how it computes, remembers, and might one day interface with machines. I'm just as at home reading about McCarthyism or the rise and fall of civilizations, and I care about using what I build to help people — from a scholarship-funded housing project for rural families to reading with kids.
+
+=== CURRENTLY ===
+Revising a **computational-neuroscience preprint** on simplifying hippocampal CA1 microcircuit models.
+
+Building an **EEG-controlled robotic hand** — a first step toward brain–machine interfaces.
+
+Co-President of the **Computing, Neuroscience, and Psychology clubs** at Shady Side Academy.
+
+=== RESEARCH-INTERESTS ===
+**Computational neuroscience** — biologically constrained microcircuit models, model simplification, and neural oscillations (theta / gamma).
+
+**Brain–computer interfaces** — decoding motor imagery from EEG, and understanding *why* current pipelines fail.
+
+**Memory and the hippocampus** — the CA1 circuit, and how structure gives rise to function.
+
+I'm also drawn to the **history and philosophy of science** — how ideas, institutions, and technologies rise, fall, and get rebuilt.
+
+=== SELECTED-WORK ===
+TAG: Software · 2024–present
+TITLE: Foosball Elo Rating & Ranking System
+LINK: https://github.com/Larryzpl123/FOOSBALL-ELOSYSTEM
+DESCRIPTION: I couldn't watch casual games stay scoreless, so I built a living rank system — offense/defense ratings, Fibonacci rank protection, a hidden rank, and a live web scoreboard. Match play rose 60%.
+
+TAG: Neurotech · 2025–present
+TITLE: EEG Neural Control — Robotic Hand
+LINK:
+DESCRIPTION: Bought an EEG detector, built a robotic hand, and am training a model to turn imagined hand movements into real ones — my first step toward brain–machine interfaces.
+
+TAG: Game Design · 2026
+TITLE: The Cruelest Years — WWII Strategy Board Game
+LINK: https://larryzpl123.github.io/The-Cruelest-Years/
+DESCRIPTION: Designed and led the build of a complex WWII wargame from scratch — 3D-printed units, a full rulebook and DLC, six playtests, and 8+ iterations to keep it deep but approachable.
+
+TAG: Game Modding · 2025–2026
+TITLE: Civilization VI Mods
+LINK:
+DESCRIPTION: Taught myself Lua, SQL, and XML to build original civilizations — part algorithm, part history research, part storytelling. Published to the Steam Workshop.
+
+TAG: Web · 2025–present
+TITLE: E-Dining — Dining-Hall Ordering System
+LINK: https://ssaedining.pythonanywhere.com/
+DESCRIPTION: A system for pre-ordering packed lunches with nutrition and allergen info and kitchen feedback — cutting queue time and giving the kitchen a clearer view of demand.
+
+TAG: Web · 2025–present
+TITLE: Smart Schedule
+LINK: https://smartschedule.pythonanywhere.com/app
+DESCRIPTION: SSA's rotating Day 1–8 schedule is confusing, so I built a web app that folds it into one clean view.
+
+=== AWARDS ===
+YEAR: 2025, 2026
+NAME: John Locke Global Essay Competition — Shortlisted, History (twice)
+DETAIL: History
+LINK:
+
+YEAR: 2025
+NAME: Brain Bee — Regional Runner-Up (2nd)
+DETAIL: Neuroscience
+LINK:
+
+YEAR: 2024
+NAME: Caribou Senior Coding Contest — 1st Place
+DETAIL: Computing
+LINK:
+
+YEAR: 2025
+NAME: Shady Hacks — Computing Award Winner
+DETAIL: Hackathon
+LINK:
+
+YEAR: 2025
+NAME: Stanford Math Tournament — Calculus 5th & Algebra HM
+DETAIL: Math
+LINK:
+
+YEAR: 2024
+NAME: Berkeley Math Tournament — Distinguished Honorable Mention
+DETAIL: Math
+LINK:
+
+YEAR: 2024–26
+NAME: Math League — National Qualifier (twice)
+DETAIL: Math
+LINK:
+
+YEAR: 2025, 2026
+NAME: AP Scholar · College Board National Recognition
+DETAIL: College Board
+LINK:
+
+YEAR: 2024–present
+NAME: Co-President · Computing, Neuroscience & Psychology Clubs
+DETAIL: Shady Side Academy
+LINK:
+
+YEAR: 2025–present
+NAME: Stanford Neurosurgery Neuroscience Journal Club
+DETAIL: Member · remote
+LINK:
+
+YEAR: 2023–24
+NAME: The Duke of Edinburgh's International Award
+DETAIL: Bronze
+LINK:
+
+=== CONTACTS ===
+LABEL: Email
+VALUE: 27zhongp@shadysideacademy.org
+LINK: mailto:27zhongp@shadysideacademy.org
+
+LABEL: GitHub
+VALUE: github.com/Larryzpl123
+LINK: https://github.com/Larryzpl123/
+
+LABEL: LinkedIn
+VALUE: in/larry-zhong
+LINK: https://www.linkedin.com/in/larry-zhong/
+
+LABEL: ORCID
+VALUE: 0009-0006-5542-8057
+LINK: https://orcid.org/0009-0006-5542-8057
+
+LABEL: Location
+VALUE: Pittsburgh, PA
+LINK: https://www.visitpittsburgh.com/
+
+LABEL: School
+VALUE: Shady Side Academy
+LINK: https://www.shadysideacademy.org/
+
+=== WORKS ===
+TAG: Computational Neuroscience · preprint
+TITLE: Simplification Strategies for Biologically Constrained Hippocampal CA1 Microcircuit Models
+LINK:
+DESCRIPTION: Independent study modeling how far a CA1 hippocampal microcircuit can be simplified (Hodgkin–Huxley → LIF; dense → sparse networks) before firing-rate and theta/gamma dynamics degrade. Python, with full code. *DOI coming (Zenodo).*
+
+TAG: Brain–Computer Interfaces · preprint
+TITLE: Diagnosing Motor-Imagery BCI Failure: A Classifier-Free Riemannian Separability Approach on Dataset 2a
+LINK:
+DESCRIPTION: A classifier-free, Riemannian-geometry analysis of *why* motor-imagery brain–computer interfaces fail to decode EEG (BCI Competition IV, Dataset 2a).
+
+TAG: U.S. History · research paper
+TITLE: McCarthyism's Effects on Academic Freedom and Higher Education
+LINK:us-history-research-paper.pdf
+DESCRIPTION: A year-long research paper on how the Second Red Scare (1947–1957) reshaped the American university — loyalty oaths, HUAC investigations, and administrative capitulation.
+
+TAG: History · Semester I final
+TITLE: Fear Itself — The Election of 1940
+LINK:jmk.pdf
+DESCRIPTION: Open letters written in the voice of John Maynard Keynes, debating the New Deal and the 1940 election.
+
+TAG: History · John Locke 2025 (Shortlisted)
+TITLE: Beyond Shame and Pride: A Balanced Approach to National History
+LINK:history-2025.pdf
+DESCRIPTION: How nations should reckon with their past beyond guilt or pride. Shortlisted, John Locke Global Essay Competition.
+
+TAG: History · John Locke 2026
+TITLE: The Most Famous Stranger in the World: Does Che Deserve His Iconic T-Shirt?
+LINK:history-2026.pdf
+DESCRIPTION: On the Che Guevara photograph and what an icon really reflects back at us.
+
+TAG: Psychology · John Locke 2026
+TITLE: The Thermometer That Changes the Weather: Is Mental Illness Over-Diagnosed or Better Recognized?
+LINK:psych-2026.pdf
+DESCRIPTION: On whether a diagnosis describes a person or acts on them — over-diagnosis versus better recognition.
