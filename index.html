@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Larry Zhong</title>
-  <meta name="description" content="Larry Zhong  — Computational Neuroscience and Brain-Computer Interfaces" />
+  <meta name="description" content="Larry Zhong — computational neuroscience and brain-computer interfaces." />
   <script>
     (function () {
       try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
@@ -60,9 +60,10 @@
     .eyebrow::before{content:'//';color:var(--muted);font-weight:500}
     :root[data-theme="light"] .eyebrow::before{display:none}
     .hero h1{font-family:var(--font-display);font-size:clamp(56px,8.5vw,112px);line-height:.95;font-weight:600;letter-spacing:-.04em;margin-bottom:32px;color:var(--ink)}
-    :root[data-theme="light"] .hero h1{font-weight:400;line-height:.92;letter-spacing:-.035em;font-size:clamp(60px,9vw,124px);font-variation-settings:"opsz" 144}
-    .hero h1 em{font-style:italic;font-weight:500;color:var(--accent);text-shadow:var(--accent-shadow)}
-    :root[data-theme="light"] .hero h1 em{font-weight:350;color:var(--ink)}
+    :root:not([data-theme="light"]) .hero h1{word-spacing:-.22em}
+    :root[data-theme="light"] .hero h1{font-weight:400;line-height:.92;letter-spacing:-.035em;font-size:clamp(60px,9vw,124px);font-variation-settings:"opsz" 144;word-spacing:.08em}
+    .hero h1 em{font-style:normal;font-weight:500;color:var(--accent);text-shadow:var(--accent-shadow)}
+    :root[data-theme="light"] .hero h1 em{font-weight:350;color:var(--accent)}
     .tagline{font-size:18px;max-width:540px;color:var(--ink-soft);line-height:1.55}
     :root[data-theme="light"] .tagline{font-size:19px}
     .tagline strong{color:var(--ink);font-weight:600}
@@ -157,7 +158,7 @@
 <body>
   <div class="container">
     <nav>
-      <div class="brand">L.Z.—'27</div>
+      <div class="brand">L.Z. — '27</div>
       <div class="nav-right">
         <div class="nav-links">
           <a href="#about">About</a>
