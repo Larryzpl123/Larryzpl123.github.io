@@ -16,7 +16,7 @@ Co-President of the **Computing, Neuroscience, and Psychology clubs** at Shady S
 === RESEARCH-INTERESTS ===
 **Computational neuroscience**: biologically constrained microcircuit models, model simplification, and neural oscillations (theta / gamma).
 
-**Brain-computer interfaces**: decoding motor imagery from EEG, and understanding *why* current pipelines fail.
+**Brain-computer interfaces**: decoding motor imagery from EEG, and understanding why current pipelines fail.
 
 **Memory and the hippocampus**: the CA1 circuit, and how structure gives rise to function.
 
