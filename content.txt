@@ -7,7 +7,7 @@ I work at the intersection of **neuroscience, computing, and history**. I don't 
 What drives me is curiosity about the brain: how it computes, remembers, and might one day interface with machines. I'm just as at home reading about McCarthyism or the rise and fall of civilizations, and I care about using what I build to help people, from a scholarship-funded housing project for rural families to reading with kids.
 
 === CURRENTLY ===
-Two **computational-neuroscience preprints** out this year: one recovering emergent gamma in a reduced **CA1 microcircuit**, one diagnosing why **motor-imagery BCIs** fail.
+Three **computational-neuroscience preprints** out this year: one recovering emergent gamma in a reduced **CA1 microcircuit**, one diagnosing why **motor-imagery BCIs** fail, one showing that smooth surrogate models certify firing patterns a real neuron cannot produce.
 
 Running **E-Dining**, a full-stack meal-ordering platform in daily use at Shady Side Academy.
 
@@ -139,6 +139,11 @@ TAG: Brain-Computer Interfaces · preprint
 TITLE: Diagnosing Motor-Imagery BCI Failure: A Three-Step Diagnostic Framework
 LINK: https://doi.org/10.5281/zenodo.21538627
 DESCRIPTION: Independent research on why motor-imagery BCIs fail. A three-step diagnostic: classDis (Lotte & Jeunet, 2018) measures class separability before any decoder is trained, a transfer gate separates subjects who decode within a session but not across one, and filter-bank CSP, a Riemannian classifier and permutation tests confirm what remains. Pooled across three cohorts (75 subjects), classDis tracks cross-session decoding at r = .66. Python, with full code. *Zenodo preprint.*
+
+TAG: Computational Neuroscience · preprint
+TITLE: Smooth Surrogate Models Approve Impossible Firing Patterns: A Hidden Flaw in Writing Brain Codes
+LINK: https://doi.org/10.5281/zenodo.21645655
+DESCRIPTION: Independent research on the write side of a neural interface. Optimising stimulation against a smooth, differentiable surrogate of a neuron's rate-current curve certifies target firing rates the real cell cannot produce: the surrogate reports zero error while the neuron stays silent. Whether that happens is set by the cell's onset bifurcation class, and a feasibility screen against the true curve removes it. Python, with full code. *Zenodo preprint.*
 
 TAG: U.S. History · research paper
 TITLE: McCarthyism's Effects on Academic Freedom and Higher Education
