@@ -136,9 +136,9 @@ LINK: https://doi.org/10.5281/zenodo.21272958
 DESCRIPTION: Independent research. It shows the standard spectral test is blind to genuine gamma on a theta-driven CA1 network, builds a comb-notch statistic to recover it, and confirms emergent gamma with a pre-registered PING test, reversing the study's own earlier conclusion. Python, with full code. *Zenodo preprint.*
 
 TAG: Brain-Computer Interfaces · preprint
-TITLE: Diagnosing Motor-Imagery BCI Failure: Separating Methodological from Neural Decoding Failure
+TITLE: Diagnosing Motor-Imagery BCI Failure: A Three-Step Diagnostic Framework
 LINK: https://doi.org/10.5281/zenodo.21538627
-DESCRIPTION: Independent research on why motor-imagery BCIs fail. A classifier-free Riemannian separability index predicts decoding accuracy (r = .89); a two-step diagnostic then separates methodological failure (recoverable) from neural failure (irrecoverable) using filter-bank CSP, a Riemannian classifier, and permutation tests. Python, with full code. *Zenodo preprint.*
+DESCRIPTION: Independent research on why motor-imagery BCIs fail. A three-step diagnostic: classDis (Lotte & Jeunet, 2018) measures class separability before any decoder is trained, a transfer gate separates subjects who decode within a session but not across one, and filter-bank CSP, a Riemannian classifier and permutation tests confirm what remains. Pooled across three cohorts (75 subjects), classDis tracks cross-session decoding at r = .66. Python, with full code. *Zenodo preprint.*
 
 TAG: U.S. History · research paper
 TITLE: McCarthyism's Effects on Academic Freedom and Higher Education
