@@ -11,7 +11,7 @@ Two **computational-neuroscience preprints** out this year: one recovering emerg
 
 Running **E-Dining**, a full-stack meal-ordering platform in daily use at Shady Side Academy.
 
-Founder and president of the **Computing Club**, president of the **Neuroscience Club** at Shady Side Academy.
+Founder and co-president of the **Computing Club**, president of the **Neuroscience Club** at Shady Side Academy.
 
 === RESEARCH-INTERESTS ===
 **Computational neuroscience**: biologically constrained microcircuit models, model simplification, and neural oscillations (theta / gamma).
@@ -90,7 +90,7 @@ DETAIL: College Board
 LINK:
 
 YEAR: 2024–present
-NAME: Founder & President · Computing Club  ·  President · Neuroscience Club
+NAME: Founder & Co-President · Computing Club  ·  President · Neuroscience Club
 DETAIL: Shady Side Academy
 LINK:
 
