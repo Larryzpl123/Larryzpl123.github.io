@@ -9,7 +9,7 @@ What drives me is curiosity about the brain: how it computes, remembers, and mig
 === CURRENTLY ===
 Three **computational-neuroscience preprints** out this year: one recovering emergent gamma in a reduced **CA1 microcircuit**, one diagnosing why **motor-imagery BCIs** fail, one showing that smooth surrogate models certify firing patterns a real neuron cannot produce.
 
-Running **E-Dining**, a full-stack meal-ordering platform in daily use at Shady Side Academy.
+Building **E-Dining**, a full-stack meal-ordering platform piloted with students and dining staff at Shady Side Academy.
 
 Founder and co-president of the **Computing Club**, president of the **Neuroscience Club** at Shady Side Academy.
 
@@ -26,7 +26,7 @@ I'm also drawn to the **history and philosophy of science**: how ideas, institut
 TAG: Software · 2024–present
 TITLE: Foosball Elo Rating & Ranking System
 LINK: https://github.com/Larryzpl123/FOOSBALL-ELOSYSTEM
-DESCRIPTION: I couldn't watch casual games stay scoreless, so I built a living rank system: offense/defense ratings, Fibonacci rank protection, a hidden rank, and a live web scoreboard. Match play rose 60%.
+DESCRIPTION: I couldn't watch casual games stay scoreless, so I built a living rank system: offense/defense ratings, Fibonacci rank protection, a hidden rank, and a live web scoreboard. It ranked 32 players across 1,230 recorded player-games.
 
 TAG: Game Design · 2026
 TITLE: The Cruelest Years: WWII Strategy Board Game
@@ -41,7 +41,7 @@ DESCRIPTION: Taught myself Lua, SQL, and XML to build original civilizations: pa
 TAG: Web · 2025–present
 TITLE: E-Dining: Dining-Hall Ordering System
 LINK: https://ssaedining.pythonanywhere.com/
-DESCRIPTION: A system for pre-ordering packed lunches with nutrition and allergen info and kitchen feedback, cutting queue time and giving the kitchen a clearer view of demand.
+DESCRIPTION: A system for pre-ordering packed lunches with nutrition and allergen info and kitchen feedback, built so the kitchen gets a clearer view of demand before service. Piloted with students and dining staff.
 
 TAG: Web · 2025–present
 TITLE: Smart Schedule
