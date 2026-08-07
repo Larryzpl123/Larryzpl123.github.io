@@ -148,19 +148,19 @@ DESCRIPTION: Independent research on the write side of a neural interface. Optim
 TAG: U.S. History · research paper
 TITLE: McCarthyism's Effects on Academic Freedom and Higher Education
 LINK: /works/us-history-research-paper.pdf
-DESCRIPTION: A year-long research paper on how the Second Red Scare (1947–1957) reshaped the American university: loyalty oaths, HUAC investigations, and administrative capitulation.
+DESCRIPTION: A year-long research paper arguing that the Second Red Scare damaged the American university less through congressional pressure than through administrative capitulation: loyalty oaths and HUAC hearings did the visible work, but it was universities policing themselves that made the damage stick. Institutions failed the value they claimed to exist for.
 
 TAG: History · John Locke 2025 (Shortlisted)
 TITLE: Beyond Shame and Pride: A Balanced Approach to National History
 LINK: /works/history-2025.pdf
-DESCRIPTION: How nations should reckon with their past beyond guilt or pride. Shortlisted, John Locke Global Essay Competition.
+DESCRIPTION: National shame and national pride are usually treated as opposites. I argue they fail the same way: both replace historical understanding with an emotional verdict, and shame in particular paralyses the civic engagement it is meant to produce. What works instead looks like a truth commission, aimed at accuracy and reconciliation rather than punishment or celebration. Shortlisted, John Locke Global Essay Competition.
 
 TAG: History · John Locke 2026 (Shortlisted)
 TITLE: The Most Famous Stranger in the World: Does Che Deserve His Iconic T-Shirt?
 LINK: /works/history-2026.pdf
-DESCRIPTION: On the Che Guevara photograph and what an icon really reflects back at us.
+DESCRIPTION: The prompt asks whether Che "deserves" the T-shirt. I argue the question smuggles in a premise: that the shirt is a verdict on the man. It stopped pointing at him decades ago. The essay weighs the executions honestly, citing a contested range rather than one convenient number, and then turns the image around: what the shirt reveals is the wearer, and a culture that no longer asks what the face on its chest is supposed to mean.
 
 TAG: Psychology · John Locke 2026 (Shortlisted)
 TITLE: The Thermometer That Changes the Weather: Is Mental Illness Over-Diagnosed or Better Recognized?
 LINK: /works/psych-2026.pdf
-DESCRIPTION: On whether a diagnosis describes a person or acts on them, over-diagnosis versus better recognition.
+DESCRIPTION: Over-diagnosis or better recognition? The evidence supports both, and I defend that mixture. But settling the proportions would not settle the dispute, because both answers share a hidden premise: that a diagnosis only describes. It also acts. The threshold for "clinically significant" is a judgment, not a measurement, and where it falls decides whose hard life becomes a condition. Shortlisted, John Locke Global Essay Competition.
