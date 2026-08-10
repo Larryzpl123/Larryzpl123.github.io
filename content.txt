@@ -2,9 +2,9 @@
 Class of 2027 at Shady Side Academy, boarding from Beijing. I build things at the intersection of **computational neuroscience**, **brain-computer interfaces**, and **history**. I can't leave something *broken or missing* without building a fix.
 
 === ABOUT ===
-I work at the intersection of **neuroscience, computing, and history**. I don't just learn things, I build them: a hippocampal CA1 microcircuit model, an EEG-controlled robotic hand, and a rating engine that turned my dorm's foosball table into a social hub.
+I work at the intersection of **neuroscience, computing, and history**. Three of my projects turn out to ask one question: *when does a measurement confidently report something that isn't there?* A hippocampal CA1 model where the spectral statistic found a rhythm that was an artifact of its own input. A brain-computer interface where the hard part was telling a decoder's failure apart from the signal's. An EEG rig I rebuilt from one electrode to twenty-two after tracing its failure to the hardware rather than the code.
 
-What drives me is curiosity about the brain: how it computes, remembers, and might one day interface with machines. I'm just as at home reading about McCarthyism or the rise and fall of civilizations, and I care about using what I build to help people, from a scholarship-funded housing project for rural families to reading with kids.
+I also build things that simply have to work: a dining-hall ordering system for my school, and a rating engine that turned my dorm's foosball table into a social hub. What drives me is curiosity about the brain: how it computes, remembers, and might one day interface with machines. I'm just as at home reading about McCarthyism or the rise and fall of civilizations, and I care about using what I build to help people, from a scholarship-funded housing project for rural families to reading with kids.
 
 === CURRENTLY ===
 Three **computational-neuroscience preprints** out this year: one recovering emergent gamma in a reduced **CA1 microcircuit**, one diagnosing why **motor-imagery BCIs** fail, one showing that smooth surrogate models certify firing patterns a real neuron cannot produce.
