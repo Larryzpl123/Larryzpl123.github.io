@@ -2,11 +2,11 @@
 Class of 2027 at Shady Side Academy, boarding from Beijing. I build things at the intersection of **computational neuroscience**, **brain-computer interfaces**, and **history**. I can't leave something *broken or missing* without building a fix.
 
 === ABOUT ===
-I work at the intersection of **neuroscience, computing, and history**. Three of my projects turn out to ask one question: *when does a measurement confidently report something that isn't there?* A hippocampal CA1 model where the spectral statistic found a rhythm that was an artifact of its own input. A brain-computer interface where the hard part was telling a decoder's failure apart from the signal's. A surrogate model that certifies firing rates a real neuron cannot produce, reporting zero error while the cell stays silent.
+I work at the intersection of **neuroscience, computing, and history**. Three of my projects turn out to ask one question: *when does a measurement confidently report something that isn't there?* A hippocampal CA1 model where the spectral statistic found a rhythm that was an artifact of its own input. A brain-computer interface where the hard part was telling a decoder's failure apart from the signal's. A surrogate model that certifies firing rates a real neuron cannot produce, reporting zero error while the cell stays silent. The pattern showed up before any of them: the first open-source BCI I trusted owed its accuracy to data leakage, and the single-electrode headset I had bought could not physically reach motor cortex. I moved to public datasets and rebuilt the analysis on real EEG.
 
 The question is not only a technical one. I spent a year on a paper arguing that McCarthyism damaged American universities less through congressional pressure than through administrative capitulation, institutions failing the value they claimed to exist for. In an essay on psychiatric diagnosis I argued that the threshold for *clinically significant* is a judgment, not a measurement, and that where it falls decides whose hard life becomes a condition. I build historical arguments in **Civilization VI** mods too, where a claim about what a leader optimized for has to be written as numbers and can then be proved wrong by play.
 
-I also build things that simply have to work: an EEG rig I rebuilt from one electrode to twenty-two after tracing its failure to the hardware rather than the code, a dining-hall ordering system for my school, and a rating engine that turned my dorm's foosball table into a social hub. What drives me is curiosity about the brain: how it computes, remembers, and might one day interface with machines, and I care about using what I build to help people, from a scholarship-funded housing project for rural families to reading with kids.
+I also build things that simply have to work: a dining-hall ordering system for my school, and a rating engine that turned my dorm's foosball table into a social hub. What drives me is curiosity about the brain: how it computes, remembers, and might one day interface with machines, and I care about using what I build to help people, from a scholarship-funded housing project for rural families to reading with kids.
 
 === CURRENTLY ===
 Three **computational-neuroscience preprints** out this year: one recovering emergent gamma in a reduced **CA1 microcircuit**, one diagnosing why **motor-imagery BCIs** fail, one showing that smooth surrogate models certify firing patterns a real neuron cannot produce.
@@ -32,7 +32,7 @@ DESCRIPTION: I couldn't watch casual games stay scoreless, so I built a living r
 
 TAG: Game Design · 2026
 TITLE: The Cruelest Years: WWII Strategy Board Game
-LINK: https://larryzpl123.github.io/The-Cruelest-Years/
+LINK: https://github.com/Larryzpl123/The-Cruelest-Years
 DESCRIPTION: Designed and led the build of a complex WWII wargame from scratch: 3D-printed units, a full rulebook and DLC, six playtests, and 8+ iterations to keep it deep but approachable.
 
 TAG: Game Modding · 2025–2026
