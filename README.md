@@ -8,23 +8,58 @@ Personal site for Peilin (Larry) Zhong — computational neuroscience, brain-com
 
 ## What this is
 
-A static, dependency-free personal site served by GitHub Pages. No framework, no build step, no package manager. Two HTML files hold all the markup, styling, and behaviour, and every piece of text on the site comes from one plain-text file.
+A static, dependency-free personal site served by GitHub Pages. No framework, no package manager, no npm. Two HTML files hold all the markup, styling, and behaviour, and every piece of text on the site comes from one plain-text file.
 
-The idea is that adding a paper or an award should mean editing a few lines of `content.txt` and pushing. Nothing else.
+The idea is that adding a paper or an award should mean editing a few lines of `content.txt`, running one script, and pushing.
+
+That one script is `render.py`. The site used to build its entire body from `content.txt` with `fetch()` at load time, which meant anything that does not execute JavaScript — link-preview bots, Bing, most LLM and agent crawlers, whatever someone pastes your URL into — saw an empty shell with five nav anchors and no text. `render.py` writes the rendered HTML into the files so the content is in the source. `content.txt` is still the only file you edit.
 
 ## Layout
 
 ```
 index.html          the whole site: markup, CSS and JS in one file
 content.txt         ALL text content. This is the only file you normally edit.
+render.py           pre-renders content.txt into the HTML. Run after every edit.
+sitemap.xml         listed in robots.txt, submitted to search engines
+robots.txt          allows everything, points at the sitemap
 portrait.jpg        photo used on the landing page
+.github/workflows/
+  prerender-check.yml   CI: fails the push if render.py was not re-run
 works/
   index.html        a standalone page listing the WORKS entries
   *.pdf             the papers and essays linked from WORKS
 LICENSE             MIT
 ```
 
-`index.html` and `works/index.html` both `fetch` `content.txt` at load time and render it. They share the same parser, so the format below applies to both.
+`index.html` and `works/index.html` both contain the content twice over: once pre-rendered into the markup by `render.py`, and once as a live `fetch('content.txt')` at load time. The format below applies to both pages, and `render.py` is a line-for-line port of the same parser, so all three agree.
+
+## The pre-render contract
+
+Every `render.py` run stamps `sha256(content.txt)` onto `<html data-content-hash="...">`. On load the page re-fetches `content.txt` and re-hashes it:
+
+| situation | what happens |
+|---|---|
+| hash matches | the pre-rendered DOM is current — the page leaves it alone |
+| hash differs | **`content.txt` wins**: the page re-renders live from it, shows a red STALE banner, and logs `console.error` |
+| fetch fails (offline, `file://`) | the pre-rendered DOM stands |
+
+So editing `content.txt` and forgetting to run `render.py` never shows stale text to a human — the live file always wins in the browser. It only degrades what crawlers see, and the banner plus the CI check are there to make sure that never lasts more than one push.
+
+```bash
+python3 render.py           # rewrite the HTML from content.txt
+python3 render.py --check   # exit 1 if the HTML is stale — this is what CI runs
+```
+
+Optional local guard, so you cannot forget:
+
+```bash
+printf '#!/bin/sh\npython3 render.py --check || { python3 render.py; git add index.html works/index.html; }\n' > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+
+## Identity metadata
+
+`index.html` carries a JSON-LD `Person` block binding the three name forms — `Peilin Zhong` (the name on the papers), `Larry Zhong`, and `Peilin (Larry) Zhong` — to one ORCID, plus `sameAs` links to GitHub, LinkedIn and the Zenodo DOIs. This exists because "Peilin Zhong" is also an active CS researcher; the block is what tells a search engine which one this site is about. If you add a profile anywhere, add it to `sameAs`.
 
 ## Editing the site
 
@@ -113,7 +148,7 @@ Then open `http://localhost:8000`.
 
 ## Deploying
 
-GitHub Pages serves the `main` branch from the repository root. Push and the change is live within a minute or so; a hard refresh may be needed to get past the CDN cache.
+GitHub Pages serves the `main` branch from the repository root. Run `python3 render.py`, commit both `content.txt` and the regenerated HTML, and push; the change is live within a minute or so, and a hard refresh may be needed to get past the CDN cache. The `prerender-check` workflow fails the push if the HTML was not regenerated.
 
 ## Notes
 
