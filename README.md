@@ -1,4 +1,4 @@
-# larryzpl123.github.io 
+# larryzpl123.github.io
 
 Personal site for Peilin (Larry) Zhong — computational neuroscience, brain-computer interfaces, and history.
 
