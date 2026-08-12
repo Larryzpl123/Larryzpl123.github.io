@@ -38,7 +38,6 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent
 CONTENT = ROOT / "content.txt"
 INDEX = ROOT / "index.html"
-WORKS = ROOT / "works" / "index.html"
 
 # Which content.txt section feeds which <section id="..."> on index.html.
 # Used to hide a whole section when its content is empty, exactly like the JS did.
@@ -167,15 +166,6 @@ def contact_block(e):
             % (escape_html(e.get("LABEL", "")), value))
 
 
-def works_list_block(e):
-    """The flatter row layout used by works/index.html."""
-    title = escape_html(e.get("TITLE", ""))
-    link = e.get("LINK", "")
-    h3 = ('<h3><a href="%s" target="_blank" rel="noopener">%s</a></h3>'
-          % (escape_html(link), title)) if link else "<h3>%s</h3>" % title
-    return ('<div class="item"><div class="tag">%s</div>%s<p>%s</p></div>'
-            % (escape_html(e.get("TAG", "")), h3,
-               render_inline(e.get("DESCRIPTION", ""))))
 
 
 # ---------------------------------------------------------------- writing
@@ -258,14 +248,7 @@ def build():
     doc = renumber(doc, [s for s in INDEX_SECTION_ORDER if s not in hidden])
     doc = set_hash(doc, digest)
 
-    # ---- works/index.html
-    wdoc = WORKS.read_text(encoding="utf-8")
-    wdoc = put(wdoc, "works",
-               "".join(works_list_block(e) for e in parse_entries(S["works"]))
-               if has("works") else "")
-    wdoc = set_hash(wdoc, digest)
-
-    return {INDEX: doc, WORKS: wdoc}, digest
+    return {INDEX: doc}, digest
 
 
 def main():

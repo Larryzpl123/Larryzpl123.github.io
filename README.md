@@ -26,12 +26,11 @@ portrait.jpg        photo used on the landing page
 .github/workflows/
   prerender-check.yml   CI: fails the push if render.py was not re-run
 works/
-  index.html        a standalone page listing the WORKS entries
   *.pdf             the papers and essays linked from WORKS
 LICENSE             MIT
 ```
 
-`index.html` and `works/index.html` both contain the content twice over: once pre-rendered into the markup by `render.py`, and once as a live `fetch('content.txt')` at load time. The format below applies to both pages, and `render.py` is a line-for-line port of the same parser, so all three agree.
+`index.html` contains the content twice over: once pre-rendered into the markup by `render.py`, and once as a live `fetch('content.txt')` at load time. `render.py` is a line-for-line port of the same parser the page uses, so the two agree.
 
 ## The pre-render contract
 
@@ -53,7 +52,7 @@ python3 render.py --check   # exit 1 if the HTML is stale — this is what CI ru
 Optional local guard, so you cannot forget:
 
 ```bash
-printf '#!/bin/sh\npython3 render.py --check || { python3 render.py; git add index.html works/index.html; }\n' > .git/hooks/pre-commit
+printf '#!/bin/sh\npython3 render.py --check || { python3 render.py; git add index.html; }\n' > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
@@ -148,7 +147,7 @@ Then open `http://localhost:8000`.
 
 ## Deploying
 
-GitHub Pages serves the `main` branch from the repository root. Run `python3 render.py`, commit both `content.txt` and the regenerated HTML, and push; the change is live within a minute or so, and a hard refresh may be needed to get past the CDN cache. The `prerender-check` workflow fails the push if the HTML was not regenerated.
+GitHub Pages serves the `main` branch from the repository root. Run `python3 render.py`, commit both `content.txt` and the regenerated `index.html`, and push; the change is live within a minute or so, and a hard refresh may be needed to get past the CDN cache. The `prerender-check` workflow fails the push if the HTML was not regenerated.
 
 ## Notes
 
