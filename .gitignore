@@ -1,0 +1,19 @@
+# macOS Finder metadata — never belongs in a repo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python (render.py leaves nothing, but just in case)
+__pycache__/
+*.py[cod]
+
+# local scratch
+_to_delete/
