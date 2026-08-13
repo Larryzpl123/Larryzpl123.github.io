@@ -56,6 +56,21 @@ printf '#!/bin/sh\npython3 render.py --check || { python3 render.py; git add ind
 chmod +x .git/hooks/pre-commit
 ```
 
+## Analytics
+
+The site uses [GoatCounter](https://www.goatcounter.com/) — one `<script>` tag in `index.html`, loaded async.
+
+It was chosen over Google Analytics for three reasons: it sets **no cookies and stores no persistent
+identifier**, so no consent banner is needed; the script is a few KB rather than tens; and GitHub's own
+repository Traffic panel does **not** measure GitHub Pages visits (it counts views of the repo page on
+github.com, over a rolling 14-day window), so some client-side counter is the only way to see whether
+anyone reads this.
+
+The site code in the snippet is a public beacon target, not a credential — every visitor's browser sends
+it in the clear. Committing it to a public repository changes nothing.
+
+To disable analytics entirely, delete the `<script data-goatcounter=...>` tag from `index.html`.
+
 ## Identity metadata
 
 `index.html` carries a JSON-LD `Person` block binding the three name forms — `Peilin Zhong` (the name on the papers), `Larry Zhong`, and `Peilin (Larry) Zhong` — to one ORCID, plus `sameAs` links to GitHub, LinkedIn and the Zenodo DOIs. This exists because "Peilin Zhong" is also an active CS researcher; the block is what tells a search engine which one this site is about. If you add a profile anywhere, add it to `sameAs`.
